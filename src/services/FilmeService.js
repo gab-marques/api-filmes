@@ -16,12 +16,12 @@ module.exports = {
     //         db.query(`SELECT * FROM filme`)
     //     })
     // }
-    inserirFilme: (genero, titulo, data_lançamento, diretor, lista_atores, imagem) => {
+    inserirFilme: (imagem,genero, titulo, data_lançamento, diretor, lista_atores) => {
 
         return new Promise((aceito, rejeitado)=>{
            
-            db.query('INSERT INTO filme ( genero, titulo, data_lançamento, diretor, lista_atores, imagem) VALUES (?, ?, ?, ?, ?, ?) ',
-            [genero , titulo , data_lançamento , diretor , lista_atores, imagem] ,
+            db.query('INSERT INTO filme (imagem, genero, titulo, data_lançamento, diretor, lista_atores) VALUES (?, ?, ?, ?, ?, ?) ',
+            [imagem, genero , titulo , data_lançamento , diretor , lista_atores] ,
             (error, results)=>{
                 if(error){rejeitado(error); return 'ERRO NO SQL';}
                 aceito(results.inserirFilme);

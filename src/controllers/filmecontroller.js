@@ -49,8 +49,9 @@ module.exports = {
         // }
         // const genero = req.body.genero;
         if(titulo && data_lançamento){
-            let indice = await FilmeService.inserirFilme( genero, titulo, data_lançamento, diretor, lista_atores);
+            let indice = await FilmeService.inserirFilme(imagem, genero, titulo, data_lançamento, diretor, lista_atores);
             json.result = {
+                imagem,
                 genero, 
                 titulo, 
                 data_lançamento, 
