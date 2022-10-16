@@ -19,6 +19,6 @@ app.use(routes);
 /*todos os enrereços das minhas rostas vão ter esse final */
 app.use('/api', routes);
 
-app.listen(process.env.PORT, ()=>{
+app.listen(process.env.PORT || 3000 ,()=>{
     console.log(`Servidor rodando em: http://localhost:${process.env.PORT}`);
 })
