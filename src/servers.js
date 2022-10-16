@@ -9,6 +9,8 @@ const routes = require("./routes");
 
 const app = express();
 
+const port = process.env.PORT || 3000;
+
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
@@ -19,6 +21,6 @@ app.use(routes);
 /*todos os enrereços das minhas rostas vão ter esse final */
 app.use('/api', routes);
 
-app.listen(process.env.PORT || 3000 ,()=>{
-    console.log(`Servidor rodando em: http://localhost:${process.env.PORT}`);
+app.listen(port, ()=>{
+    console.log(`Servidor rodando em: http://localhost:${port}`);
 })
