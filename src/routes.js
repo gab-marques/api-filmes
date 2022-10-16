@@ -6,6 +6,7 @@ const router = express.Router();
 const FilmeController = require('./controllers/filmecontroller');
 
 /* rotas*/
+router.get('/', FilmeController.buscarTodos);
 router.get('/filmes', FilmeController.buscarTodos);
 
 // router.get('/filmes/:codigo', FilmeController.buscarUm);
